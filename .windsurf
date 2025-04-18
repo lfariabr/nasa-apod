@@ -1,0 +1,75 @@
+project:
+  name: NASA Astronomy Picture of the Day (APOD)
+  description: >
+    A modern full-stack project that fetches and displays NASA's Astronomy Picture of the Day using a clean Next.js frontend and a high-performance FastAPI backend.
+    This public project is a showcase of full-stack engineering principles and clean code design aimed at FAANG-level standards.
+
+objectives:
+  - Build a fast, asynchronous backend API using FastAPI with external API integration (NASA APOD).
+  - Architect a scalable, component-based frontend with Next.js and TypeScript.
+  - Follow best practices in full-stack development including clean separation of concerns, modularity, async handling, and responsive UI.
+  - Demonstrate ability to integrate third-party APIs securely and efficiently.
+  - Highlight frontend/backend synergy in a real-world product use case.
+  - Prepare codebase for future feature extensions like favorites, gallery, and mobile support.
+
+stack:
+  backend:
+    framework: FastAPI
+    language: Python 3.10+
+    dependencies:
+      - uvicorn
+      - pydantic
+      - httpx
+    async_support: true
+    env:
+      - NASA_API_KEY
+  frontend:
+    framework: Next.js
+    language: TypeScript
+    dependencies:
+      - react
+      - axios (or fetch)
+    build_tool: Vite or Next.js native
+  data_source:
+    provider: NASA
+    api: https://api.nasa.gov/planetary/apod
+    key_required: true
+
+structure:
+  - backend/
+    - models/: Pydantic models to validate API responses
+    - services/: APOD client logic to interact with NASA
+    - main.py: Defines API endpoints for the frontend
+  - frontend/
+    - app/: Page routing and layout
+    - components/: Reusable UI blocks (cards, image viewer, etc.)
+    - hooks/: Custom React hooks (e.g., useAPOD)
+    - public/: Static files (e.g., logo, favicon)
+
+guidance:
+  ai_copilot:
+    - Ensure async logic is respected across backend service calls
+    - Promote modular structure: separate logic for fetching, validation, and transformation
+    - Encourage component reusability in frontend
+    - Maintain TypeScript typing integrity across components and hooks
+    - Apply performance best practices: lazy loading images, SSR where appropriate
+    - Respect separation of API concerns (NASA integration stays in `services/`, not in routes)
+
+faang_alignment:
+  design_principles:
+    - Async-first and I/O optimized backend (like Netflix or Amazon microservices)
+    - Fully typed frontend with reusable components (like React infra at Meta)
+    - Clean architecture: logic isolation, testable functions
+    - Scalability in mind: API architecture allows easy extension
+  showcase_focus:
+    - Full-stack proficiency
+    - API design and consumption
+    - Developer experience (DX) and user experience (UX)
+    - Strong alignment with modern SaaS and microservice standards
+
+author:
+  name: Luis Faria
+  linkedin: https://linkedin.com/in/lfariabr
+  github: https://github.com/lfariabr
+  location: Sydney, Australia
+  aspiration: Software Engineer @ FAANG or elite product-first company

@@ -14,7 +14,7 @@ export default function APODButton({ onClick, loading }: { onClick: () => void; 
         marginBottom: "1rem",
       }}
     >
-      {loading ? "Loading..." : "LOAD IMAGE"}
+      {loading ? "Loading..." : "LOAD IMAGE OF THE DAY"}
     </button>
   );
 }
