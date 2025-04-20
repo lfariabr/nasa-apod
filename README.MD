@@ -118,11 +118,11 @@ nasa-apod/
 
 ## Future Enhancements
 
-- [ ] Date selection for viewing historical APOD images
-- [ ] Image gallery of favorites
+- [X] Date selection for viewing historical APOD images
+- [X] Plug in OpenAPI with button "ELIGHTEN ME" to display fun facts
 - [ ] Dark/Light theme toggle
+- [ ] Image gallery of favorites
 - [ ] Social sharing functionality
-- [ ] Mobile app version
 
 ## License
 
