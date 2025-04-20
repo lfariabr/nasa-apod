@@ -16,7 +16,7 @@ export default function Home() {
       <h2>Explore the wonders of the universe</h2>
       {/* Today's APOD */}
       <div style={{margin: "1.5rem 0"}}>
-        <APODButton onClick={fetchApod} loading={loading} />
+        <APODButton onClick={() => fetchApod()} loading={loading} />
       </div>
 
       {/* Specific Date APOD */}

@@ -1,4 +1,5 @@
 import { APOD } from "../hooks/useApod";
+import APODOpenAi from "./APODOpenAi";
 
 export default function APODViewer({ apod }: { apod: APOD }) {
   return (
@@ -16,6 +17,7 @@ export default function APODViewer({ apod }: { apod: APOD }) {
           />
         )}
         <p style={{ maxWidth: "700px", margin: "0 auto" }}>{apod.explanation}</p>
+        <APODOpenAi apod={apod} />
     </div>
   );
 }
