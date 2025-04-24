@@ -1,35 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { ThemeProvider } from "../context/ThemeContext";
 import { useApod } from "../hooks/useApod";
-import APODViewer from "../components/APODViewer";
-import APODButton from "../components/APODButton";
-import APODDatePicker from "../components/APODDatePicker";
-import APODLoader from "../components/APODLoader";
-import APODError from "../components/APODError";
+import ThemeToggle from "../components/ThemeToggle";
+import ImageDisplayer from "../components/ImageDisplayer";
+import Button from "../components/Button";
+import DatePicker from "../components/DatePicker";
+import Loader from "../components/Loader";
+import Error from "../components/Error";
 
 export default function Home() {
   const { apod, loading, error, fetchApod } = useApod();
   return (
-    <main style={{ padding: "2rem", textAlign: "center" }}>
-      <h1>NASA APOD 🔭</h1>
-      <h2>Explore the wonders of the universe</h2>
-      {/* Today's APOD */}
-      <div style={{margin: "1.5rem 0"}}>
-        <APODButton onClick={() => fetchApod()} loading={loading} />
-      </div>
+    <ThemeProvider>
+      <main style={{ padding: "2rem", textAlign: "center" }}>
+        <ThemeToggle />
+        <div style={{ marginBottom: "1.5rem" }}>
+          <h1>NASA APOD 🔭</h1>
+          <h2>Explore the wonders of the universe</h2>
+        </div>
 
-      {/* Specific Date APOD */}
-      <div style={{ margin: "1.5rem 0" }}>
-        <p style={{ marginBottom: "0.5rem", fontWeight: "bold" }}>Or choose a specific date:</p>
-        <APODDatePicker 
+        {/* Today's APOD */}
+        <div style={{ marginBottom: "1.5rem" }}>
+          <Button onClick={() => fetchApod()} loading={loading} />
+        </div>
+
+        {/* Specific Date APOD */}
+        <div style={{ marginBottom: "1.5rem" }}>
+          <p style={{ marginBottom: "0.5rem", fontWeight: "bold" }}>Or choose a specific date:</p>
+          <DatePicker 
           onSelectDate={(date) => fetchApod(date)} 
           loading={loading} 
         />
       </div>
-      {loading && <APODLoader />}
-      {error && <APODError message={error} />}
-      {apod && <APODViewer apod={apod} />}
+      {loading && <Loader />}
+      {error && <Error message={error} />}
+      {apod && <ImageDisplayer apod={apod} />}
     </main>
+    </ThemeProvider>
   );
 }

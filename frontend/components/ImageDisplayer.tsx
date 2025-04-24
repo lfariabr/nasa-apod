@@ -1,12 +1,20 @@
+import Image from "next/image";
 import { APOD } from "../hooks/useApod";
-import APODOpenAi from "./APODOpenAi";
+import OpenAi from "./OpenAi";
 
 export default function APODViewer({ apod }: { apod: APOD }) {
   return (
     <div>
         <h2>{apod.title}</h2>
         {apod.media_type === "image" ? (
-          <img src={apod.url} alt={apod.title} style={{ maxWidth: "100%", margin: "1rem 0" }} />
+          <Image 
+            src={apod.url} 
+            alt={apod.title} 
+            style={{ margin: "1rem 0" }} 
+            width={700}
+            height={700}
+            sizes="100vw,100vh"
+          />
         ) : (
           <iframe
             src={apod.url}
@@ -17,7 +25,7 @@ export default function APODViewer({ apod }: { apod: APOD }) {
           />
         )}
         <p style={{ maxWidth: "700px", margin: "0 auto" }}>{apod.explanation}</p>
-        <APODOpenAi apod={apod} />
+        <OpenAi apod={apod} />
     </div>
   );
 }
