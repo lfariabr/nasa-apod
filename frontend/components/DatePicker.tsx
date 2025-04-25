@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-interface APODDatePickerProps {
+interface DatePickerProps {
   onSelectDate: (date: string) => void;
   loading: boolean;
 }
 
-export default function APODDatePicker({ onSelectDate, loading }: APODDatePickerProps) {
+export default function DatePicker({ onSelectDate, loading }: DatePickerProps) {
   const [date, setDate] = useState("");
   
   // Calculate max date (today) and min date (NASA APOD started in 1995-06-16)

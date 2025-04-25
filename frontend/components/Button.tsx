@@ -1,4 +1,4 @@
-export default function APODButton({ onClick, loading }: { onClick: () => void; loading: boolean }) {
+export default function Button({ onClick, loading }: { onClick: () => void; loading: boolean }) {
   return (
     <button
       type="button"

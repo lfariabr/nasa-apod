@@ -1,4 +1,4 @@
-export default function APODLoader() {
+export default function Loader() {
   return <div>Loading...</div>;
 }
   

@@ -1,20 +1,13 @@
-import Image from "next/image";
 import { APOD } from "../hooks/useApod";
 import OpenAi from "./OpenAi";
+import SocialShare from "./SocialShare";
 
-export default function APODViewer({ apod }: { apod: APOD }) {
+export default function ImageDisplayer({ apod }: { apod: APOD }) {
   return (
     <div>
         <h2>{apod.title}</h2>
         {apod.media_type === "image" ? (
-          <Image 
-            src={apod.url} 
-            alt={apod.title} 
-            style={{ margin: "1rem 0" }} 
-            width={700}
-            height={700}
-            sizes="100vw,100vh"
-          />
+          <img src={apod.url} alt={apod.title} style={{ width: 700, height: 700, borderRadius: "6px", marginBottom: "1rem" }} />
         ) : (
           <iframe
             src={apod.url}
@@ -26,6 +19,7 @@ export default function APODViewer({ apod }: { apod: APOD }) {
         )}
         <p style={{ maxWidth: "700px", margin: "0 auto" }}>{apod.explanation}</p>
         <OpenAi apod={apod} />
+        <SocialShare apod={apod} />
     </div>
   );
 }

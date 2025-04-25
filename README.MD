@@ -120,9 +120,10 @@ nasa-apod/
 
 - [X] Date selection for viewing historical APOD images
 - [X] Plug in OpenAPI with button "ELIGHTEN ME" to display fun facts
-- [ ] Dark/Light theme toggle
+- [X] Dark/Light theme toggle
+- [X] Social sharing feature
+- [ ] Mobile responsive design
 - [ ] Image gallery of favorites
-- [ ] Social sharing functionality
 
 ## License
 

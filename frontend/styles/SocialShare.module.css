@@ -1,0 +1,53 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 500px;
+    transition: background 0.2s, color 0.2s;
+}
+  
+  .image {
+    width: 350px;
+    height: 350px;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .light {
+    background: #f9f9f9;
+    color: #222;
+    border: 1px solid #ccc;
+  }
+  
+  .dark {
+    background: #222;
+    color: #f9f9f9;
+    border: 1px solid #444;
+  }
+
+  .button {
+    background: none;
+    border: 0.1px solid var(--foreground);
+    border-radius: 1rem;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+    color: var(--foreground);
+    margin: 1rem 0;
+    font-size: 1rem;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  .button:hover {
+    /* Change border or background on hover */
+    /* border-color: var(--accent); */
+    background: var(--accent); color: #fff;
+  }
